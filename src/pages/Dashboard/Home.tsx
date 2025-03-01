@@ -1,10 +1,8 @@
-import EcommerceMetrics from "../../components/ecommerce/EcommerceMetrics";
-import MonthlySalesChart from "../../components/ecommerce/MonthlySalesChart";
-import StatisticsChart from "../../components/ecommerce/StatisticsChart";
-import MonthlyTarget from "../../components/ecommerce/MonthlyTarget";
-import RecentOrders from "../../components/ecommerce/RecentOrders";
-import DemographicCard from "../../components/ecommerce/DemographicCard";
+import EcommerceMetrics from "../../components/ecommerce/Main_Menu";
+import Announcement from "../../components/ecommerce/Announcement";
+import Recently_Activity from "../../components/ecommerce/Recently_Activity";
 import PageMeta from "../../components/common/PageMeta";
+import Upcoming_events from "../../components/ecommerce/Upcoming_events";
 
 export default function Home() {
   return (
@@ -14,26 +12,17 @@ export default function Home() {
         description="This is React.js Ecommerce Dashboard page for TailAdmin - React.js Tailwind CSS Admin Dashboard Template"
       />
       <div className="grid grid-cols-12 gap-4 md:gap-6">
+        {/* Left Column */}
         <div className="col-span-12 space-y-6 xl:col-span-7">
           <EcommerceMetrics />
-
-          <MonthlySalesChart />
+          <Announcement />
         </div>
 
-        <div className="col-span-12 xl:col-span-5">
-          <MonthlyTarget />
-        </div>
-
-        <div className="col-span-12">
-          <StatisticsChart />
-        </div>
-
-        <div className="col-span-12 xl:col-span-5">
-          <DemographicCard />
-        </div>
-
-        <div className="col-span-12 xl:col-span-7">
-          <RecentOrders />
+        {/* Right Column */}
+        <div className="col-span-12 xl:col-span-5 space-y-6">
+          <Recently_Activity />
+          <Upcoming_events />{" "}
+          {/* Now placed correctly below Recently Activity */}
         </div>
       </div>
     </>
