@@ -37,11 +37,11 @@ const AppSidebar: React.FC = () => {
   const { isExpanded, isMobileOpen, isHovered, setIsHovered } = useSidebar();
   const location = useLocation();
 
+  // ✅ Corrected type for openSubmenu to match function usage
   const [openSubmenu, setOpenSubmenu] = useState<{
     type: "main" | "others";
     index: number;
   } | null>(null);
-
   const [subMenuHeight, setSubMenuHeight] = useState<Record<string, number>>(
     {}
   );
@@ -86,6 +86,7 @@ const AppSidebar: React.FC = () => {
     }
   }, [openSubmenu]);
 
+  // ✅ Fixed type issue in the function
   const handleSubmenuToggle = (index: number, menuType: "main" | "others") => {
     setOpenSubmenu((prevOpenSubmenu) =>
       prevOpenSubmenu?.type === menuType && prevOpenSubmenu?.index === index
